@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction | Data Science Capstone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent: #238636;
+            --accent-hover: #2ea043;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid #30363d;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(45deg, #7ee787, #2ea043);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-top: 40px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+            border-color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .metric-box {
+            background: #21262d;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #7ee787;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        code {
+            background: #1f2428;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #e6edf3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Crop Yield Prediction</h1>
+            <p class="subtitle">A Data-Driven Analysis of Agricultural Climate Resilience</p>
+            <a href="https://github.com/Shaik-Hafsa29/-crop-yield-prediction-capstone" class="btn" target="_blank">View Source Code on GitHub</a>
+        </header>
+
+        <section class="card">
+            <h2>Project Overview</h2>
+            <p>Climate change and agricultural practices drastically affect crop output. This Capstone project explores the FAO/World Bank dataset to analyze how <strong>Rainfall</strong>, <strong>Temperature</strong>, and <strong>Pesticide/Fertilizer use</strong> impact crop yields—with a specific focus on regional crops like Potatoes in India.</p>
+        </section>
+
+        <section class="card">
+            <h2>Methodology</h2>
+            <p>The core pipeline of this data science project includes:</p>
+            <ul>
+                <li><strong>Data Acquisition:</strong> Programmatic fetching using <code>kagglehub</code>.</li>
+                <li><strong>Data Cleaning:</strong> Imputation of missing values and standardization of units (hg/ha, mm, °C).</li>
+                <li><strong>Exploratory Data Analysis:</strong> Heatmaps and scatterplots to map non-linear relationships.</li>
+                <li><strong>Regression Modeling:</strong> Multiple Linear Regression implemented via <code>scikit-learn</code>.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Economic Impact Simulation</h2>
+            <p>Using the trained predictive model, we simulate environmental shocks to understand agricultural vulnerability. Below is a sample outcome from simulating a <strong>10% drop in annual rainfall</strong>.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-value">-10%</div>
+                    <div class="metric-label">Rainfall Drop</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">Predictive</div>
+                    <div class="metric-label">Model Engine</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">Quantified</div>
+                    <div class="metric-label">Output Impact</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: var(--text-muted); font-size: 0.9rem;">
+                <em>Clone the repository and run <code>analysis.py</code> to generate the exact statistical drops and R-squared metrics for your dataset!</em>
+            </p>
+        </section>
+
+        <footer style="text-align: center; margin-top: 60px; color: var(--text-muted); padding-bottom: 40px;">
+            <p>Developed for the AkaSOHO Capstone Submission</p>
+        </footer>
+    </div>
+
+</body>
+</html>
